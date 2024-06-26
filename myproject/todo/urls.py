@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import TestView, TodoAPI
+from .views import TestView, TodoAPI, TodoDetailAPIView
 
 # 일종의 컨트롤러같이 URL 매핑을 위한 파일
 #    path('hello/', TestView.as_view(), name='hello_world'),
@@ -10,6 +10,5 @@ from .views import TestView, TodoAPI
 urlpatterns = [
     path('hello/', TestView.as_view(), name='hello_world'),
     path('api/todo/', TodoAPI.as_view(), name='todo_list'), # get, post
-    path('api/todo/<int:pk>/', TodoAPI.as_view(), name='todo_detail'), # update, delete, get
-
+    path('api/todo/<int:pk>/', TodoDetailAPIView.as_view(), name='todo_detail'), # update, delete, get
 ]
