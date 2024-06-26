@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import TestView
+from .views import ToDoAPIView, ToDoUpdateView
 
 urlpatterns = [
-    path('hello/', TestView.as_view(), name='hello_world'),
+    path('todos/', ToDoAPIView.as_view(), name='todo_list_create'),
+    path('todos/<int:id>', ToDoUpdateView.as_view(), name='todo_list_update'),
 ]
